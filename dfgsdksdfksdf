@@ -1,0 +1,388 @@
+[33mcommit df2b2d0ff7739c1159a86232e37fb6405b104d6b[m
+Author: Alex Orehov <sorok@ukr.net>
+Date:   Wed Nov 6 12:16:41 2019 +0200
+
+    Php blog
+
+[1mdiff --git a/.idea/misc.xml b/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..28a804d[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/misc.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="JavaScriptSettings">[m
+[32m+[m[32m    <option name="languageLevel" value="ES6" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/modules.xml b/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3da07f6[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/modules.xml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/.idea/phpblog.iml" filepath="$PROJECT_DIR$/.idea/phpblog.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/phpblog.iml b/.idea/phpblog.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c956989[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/phpblog.iml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="WEB_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager">[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$" />[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/vcs.xml b/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..94a25f7[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$" vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/workspace.xml b/.idea/workspace.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2d93460[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/workspace.xml[m
+[36m@@ -0,0 +1,66 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ChangeListManager">[m
+[32m+[m[32m    <list default="true" id="78d1e656-c4d5-4e4b-9919-ce86b78e68e3" name="Default Changelist" comment="" />[m
+[32m+[m[32m    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />[m
+[32m+[m[32m    <option name="SHOW_DIALOG" value="false" />[m
+[32m+[m[32m    <option name="HIGHLIGHT_CONFLICTS" value="true" />[m
+[32m+[m[32m    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />[m
+[32m+[m[32m    <option name="LAST_RESOLUTION" value="IGNORE" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="ComposerSettings">[m
+[32m+[m[32m    <execution>[m
+[32m+[m[32m      <executable />[m
+[32m+[m[32m    </execution>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="Git.Settings">[m
+[32m+[m[32m    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />[m
+[32m+[m[32m    <option name="ROOT_SYNC" value="DONT_SYNC" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="ProjectId" id="1TEi7kvdNBzWKAn4ZMGmg6Oo5Eg" />[m
+[32m+[m[32m  <component name="PropertiesComponent">[m
+[32m+[m[32m    <property name="WebServerToolWindowFactoryState" value="false" />[m
+[32m+[m[32m    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />[m
+[32m+[m[32m    <property name="settings.editor.selected.configurable" value="vcs.Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="RunDashboard">[m
+[32m+[m[32m    <option name="ruleStates">[m
+[32m+[m[32m      <list>[m
+[32m+[m[32m        <RuleState>[m
+[32m+[m[32m          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />[m
+[32m+[m[32m        </RuleState>[m
+[32m+[m[32m        <RuleState>[m
+[32m+[m[32m          <option name="name" value="StatusDashboardGroupingRule" />[m
+[32m+[m[32m        </RuleState>[m
+[32m+[m[32m      </list>[m
+[32m+[m[32m    </option>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="SvnConfiguration">[m
+[32m+[m[32m    <configuration />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="TaskManager">[m
+[32m+[m[32m    <task active="true" id="Default" summary="Default task">[m
+[32m+[m[32m      <changelist id="78d1e656-c4d5-4e4b-9919-ce86b78e68e3" name="Default Changelist" comment="" />[m
+[32m+[m[32m      <created>1573031491310</created>[m
+[32m+[m[32m      <option name="number" value="Default" />[m
+[32m+[m[32m      <option name="presentableId" value="Default" />[m
+[32m+[m[32m      <updated>1573031491310</updated>[m
+[32m+[m[32m      <workItem from="1573031497494" duration="2047000" />[m
+[32m+[m[32m    </task>[m
+[32m+[m[32m    <servers />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="TypeScriptGeneratedFilesManager">[m
+[32m+[m[32m    <option name="version" value="1" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="Vcs.Log.Tabs.Properties">[m
+[32m+[m[32m    <option name="TAB_STATES">[m
+[32m+[m[32m      <map>[m
+[32m+[m[32m        <entry key="MAIN">[m
+[32m+[m[32m          <value>[m
+[32m+[m[32m            <State />[m
+[32m+[m[32m          </value>[m
+[32m+[m[32m        </entry>[m
+[32m+[m[32m      </map>[m
+[32m+[m[32m    </option>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/about.php b/about.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ce9f58c[m
+[1m--- /dev/null[m
+[1m+++ b/about.php[m
+[36m@@ -0,0 +1,66 @@[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32minclude("blocks/db.php");[m
+[32m+[m[32m$sql = "SELECT COUNT(*) FROM settings WHERE id=4";[m
+[32m+[m[32mif ($stmt = $pdo->query($sql)) {[m
+[32m+[m
+[32m+[m[32m  if ($stmt->fetchColumn() > 0) {[m
+[32m+[m[32m    $stmt = $pdo->query('SELECT * FROM settings WHERE id=4');[m
+[32m+[m[32m  }[m
+[32m+[m[32m    $row = $stmt->fetch();[m
+[32m+[m[32m} else {[m
+[32m+[m[32m    echo "Нет строк для вывода";[m
+[32m+[m[32m}[m
+[32m+[m[32mif (!$row) {[m
+[32m+[m[32m  echo "<p>Запрос на выборку данных из базы не может быть выполнен.[m
+[32m+[m[32m  Сообщите об этом администратору sorok@ukr.net <br>[m
+[32m+[m[32m  <strong>Код ошибки:</strong> </p>";[m
+[32m+[m[32m    echo "\nPDO::errorInfo():\n";[m
+[32m+[m[32m    print_r($pdo->errorInfo());[m
+[32m+[m[32m    exit($row);[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m<html>[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <meta name="description" content="<?= $row['meta_d']; ?>">[m
+[32m+[m[32m  <meta name="keywords" content="<?= $row['meta_k']; ?>">[m
+[32m+[m[32m  <meta charset="utf-8" content="text/html" http-equiv="content-type">[m
+[32m+[m[32m  <title><?= $row['title']; ?></title>[m
+[32m+[m[32m  <link href="style.css" rel="stylesheet" type="text/css">[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body>[m
+[32m+[m[32m  <table width="690" border="0" align="center" cellpadding="0"[m
+[32m+[m[32m  cellspacing="0" bgcolor="#FFFFFF" class="main_border">[m
+[32m+[m[32m    <tr>[m
+[32m+[m[32m      <td>[m
+[32m+[m[32m        <?php include("blocks/header.php"); ?>[m
+[32m+[m[32m      </td>[m
+[32m+[m[32m    </tr>[m
+[32m+[m[32m    <tr>[m
+[32m+[m[32m      <td>[m
+[32m+[m[32m        <table width="690" border="0" cellpadding="0"[m
+[32m+[m[32m        cellspacing="0">[m
+[32m+[m[32m          <tr>[m
+[32m+[m[32m          <!-- Левый блок сайта-->[m
+[32m+[m[32m            <?php include("blocks/lefttd.php"); ?>[m
+[32m+[m
+[32m+[m[32m            <td valign="top">[m
+[32m+[m[32m              <!-- Навигация сайта-->[m
+[32m+[m[32m              <?php $n=4; include("blocks/nav.php"); ?>[m
+[32m+[m[32m              <?= $row['text']; ?>[m
+[32m+[m[32m            </td>[m
+[32m+[m[32m          </tr>[m
+[32m+[m[32m        </table>[m
+[32m+[m[32m      </td>[m
+[32m+[m[32m    </tr>[m
+[32m+[m[32m    <tr>[m
+[32m+[m[32m      <td>[m
+[32m+[m[32m        <?php include("blocks/footer.php"); ?>[m
+[32m+[m[32m      </td>[m
+[32m+[m[32m    </tr>[m
+[32m+[m[32m  </table>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+[1mdiff --git a/admin/add_cat.php b/admin/add_cat.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6ebaa17[m
+[1m--- /dev/null[m
+[1m+++ b/admin/add_cat.php[m
+[36m@@ -0,0 +1,57 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32minclude("blocks/db.php");[m
+[32m+[m[32m?>[m
+[32m+[m
+[32m+[m[32m<html>[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <title>Обработчик</title>[m
+[32m+[m[32m  <link href="style.css" rel="stylesheet" type="text/css">[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body>[m
+[32m+[m[32m<table width="690" border="0" align="center" cellpadding="0"[m
+[32m+[m[32mcellspacing="0" bgcolor="#FFFFFF" class="main_border">[m
+[32m+[m
+[32m+[m[32m<!-- Шапка сайта -->[m
+[32m+[m[32m<?php include("blocks/header.php"); ?>[m
+[32m+[m
+[32m+[m[32m  <tr>[m
+[32m+[m[32m    <td>[m
+[32m+[m[32m        <table width="690" border="0" cellpadding="0"[m
+[32m+[m[32m        cellspacing="0">[m
+[32m+[m[32m        <tr>[m
+[32m+[m[32m          <!-- Левый блок сайта-->[m
+[32m+[m[32m          <?php include("blocks/lefttd.php"); ?>[m
+[32m+[m[32m          <!-- Основной блок сайта-->[m
+[32m+[m[32m          <td valign="top">[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32m$title = $_POST['title'];[m
+[32m+[m[32m$meta_d = $_POST['meta_d'];[m
+[32m+[m[32m$meta_k = $_POST['meta_k'];[m
+[32m+[m[32m$text = $_POST['text'];[m
+[32m+[m
+[32m+[m[32m  /*Здесю заносим данные в базу*/[m
+[32m+[m[32m  $sql = "INSERT INTO categories (title, meta_d, meta_k, text) VALUES (:title,[m
+[32m+[m[32m    :meta_d, :meta_k, :text)";[m
+[32m+[m
+[32m+[m[32m  $result = $pdo->prepare($sql)->execute(['title' => $title,[m
+[32m+[m[32m  'meta_d' => $meta_d, 'meta_k' => $meta_k, 'text' => $text]);[m
+[32m+[m
+[32m+[m[32m    if ($result) {[m
+[32m+[m[32m      echo "<p>Данные занесены в таблицу!</p>";[m
+[32m+[m[32m    } else {[m
+[32m+[m[32m      echo "<p>Ошбика! Заметка не добавлена в таблицу.</p>";[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m?>[m
+[32m+[m[32m          </td>[m
+[32m+[m[32m        </tr>[m
+[32m+[m[32m      </table>[m
+[32m+[m[32m    </td>[m
+[32m+[m[32m  </tr>[m
+[32m+[m[32m  <!-- Нижний блок -->[m
+[32m+[m[32m<?php include("blocks/footer.php"); ?>[m
+[32m+[m[32m</table>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+[1mdiff --git a/admin/add_friends.php b/admin/add_friends.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..db11829[m
+[1m--- /dev/null[m
+[1m+++ b/admin/add_friends.php[m
+[36m@@ -0,0 +1,55 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32minclude("blocks/db.php");[m
+[32m+[m[32m?>[m
+[32m+[m
+[32m+[m[32m<html>[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <title>Обработчик</title>[m
+[32m+[m[32m  <link href="style.css" rel="stylesheet" type="text/css">[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body>[m
+[32m+[m[32m<table width="690" border="0" align="center" cellpadding="0"[m
+[32m+[m[32mcellspacing="0" bgcolor="#FFFFFF" class="main_border">[m
+[32m+[m
+[32m+[m[32m<!-- Шапка сайта -->[m
+[32m+[m[32m<?php include("blocks/header.php"); ?>[m
+[32m+[m
+[32m+[m[32m  <tr>[m
+[32m+[m[32m    <td>[m
+[32m+[m[32m        <table width="690" border="0" cellpadding="0"[m
+[32m+[m[32m        cellspacing="0">[m
+[32m+[m[32m        <tr>[m
+[32m+[m[32m          <!-- Левый блок сайта-->[m
+[32m+[m[32m          <?php include("blocks/lefttd.php"); ?>[m
+[32m+[m[32m          <!-- Основной блок сайта-->[m
+[32m+[m[32m          <td valign="top">[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32m$title = $_POST['title'];[m
+[32m+[m[32m$link = $_POST['link'];[m
+[32m+[m
+[32m+[m[32m  /*Здесю заносим данные в базу*/[m
+[32m+[m[32m  $sql = "INSERT INTO friends_blog (title, link) VALUES (:title,[m
+[32m+[m[32m    :link)";[m
+[32m+[m
+[32m+[m[32m  $result = $pdo->prepare($sql)->execute(['title' => $title,[m
+[32m+[m[32m  'link' => $link]);[m
+[32m+[m
+[32m+[m[32m    if ($result) {[m
+[32m+[m[32m      echo "<p>Данные занесены в таблицу!</p>";[m
+[32m+[m[32m    } else {[m
+[32m+[m[32m      echo "<p>Ошбика! Заметка не добавлена в таблицу.</p>";[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m?>[m
+[32m+[m[32m          </td>[m
+[32m+[m[32m        </tr>[m
+[32m+[m[32m      </table>[m
+[32m+[m[32m    </td>[m
+[32m+[m[32m  </tr>[m
+[32m+[m[32m  <!-- Нижний блок -->[m
+[32m+[m[32m<?php include("blocks/footer.php"); ?>[m
+[32m+[m[32m</table>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+[1mdiff --git a/admin/add_post.php b/admin/add_post.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c0f5d6a[m
+[1m--- /dev/null[m
+[1m+++ b/admin/add_post.php[m
+[36m@@ -0,0 +1,63 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32minclude("blocks/db.php");[m
+[32m+[m[32m?>[m
+[32m+[m
+[32m+[m[32m<html>[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <title>Обработчик урока</title>[m
+[32m+[m[32m  <link href="style.css" rel="stylesheet" type="text/css">[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body>[m
+[32m+[m[32m<table width="690" border="0" align="center" cellpadding="0"[m
+[32m+[m[32mcellspacing="0" bgcolor="#FFFFFF" class="main_border">[m
+[32m+[m
+[32m+[m[32m<!-- Шапка сайта -->[m
+[32m+[m[32m<?php include("blocks/header.php"); ?>[m
+[32m+[m
+[32m+[m[32m  <tr>[m
+[32m+[m[32m    <td>[m
+[32m+[m[32m        <table width="690" border="0" cellpadding="0"[m
+[32m+[m[32m        cellspacing="0">[m
+[32m+[m[32m        <tr>[m
+[32m+[m[32m          <!-- Левый блок сайта-->[m
+[32m+[m[32m          <?php include("blocks/lefttd.php"); ?>[m
+[32m+[m[32m          <!-- Основной блок сайта-->[m
+[32m+[m[32m          <td valign="top">[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32m$title = $_POST['title'];[m
+[32m+[m[32m$meta_d = $_POST['meta_d'];[m
+[32m+[m[32m$meta_k = $_POST['meta_k'];[m
+[32m+[m[32m$date = $_POST['date'];[m
+[32m+[m[32m$description = $_POST['description'];[m
+[32m+[m[32m$text = $_POST['text'];[m
+[32m+[m[32m$author = $_POST['author'];[m
+[32m+[m[32m$img = $_POST['img'];[m
+[32m+[m[32m$cat = $_POST['cat'];[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  /*Здесю заносим данные в базу*/[m
+[32m+[m[32m  $sql = "INSERT INTO data (title, meta_d, meta_k, date, description,[m
+[32m+[m[32m  text, author, mini_img, cat) VALUES (?,?,?,?,?,?,?,?,?)";[m
+[32m+[m
+[32m+[m[32m  $result = $pdo->prepare($sql)->execute([$title, $meta_d, $meta_k, $date,[m
+[32m+[m[32m  $description, $text, $author, $img, $cat]);[m
+[32m+[m
+[32m+[m[32m    if ($result) {[m
+[32m+[m[32m      echo "<p>Данные занесены в таблицу!</p>";[m
+[32m+[m[32m    } else {[m
+[32m+[m[32m      echo "<p>Ошбика! Заметка не добавлена в таблицу.</p>";[m
+[32m+[m[32m
