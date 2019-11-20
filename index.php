@@ -1,6 +1,7 @@
 <?php
 
 include("blocks/db.php");
+
 $sql = "SELECT COUNT(*) FROM settings WHERE id=1";
 if ($stmt = $pdo->query($sql)) {
 

@@ -75,7 +75,6 @@
     $total_comments = $stat3->fetchColumn();
     echo "<p class='stat'>Всего просмотров заметок: $total_comments</p>";
 
-
     ?>
   </div>
 </td>

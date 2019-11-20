@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <html>
 <head>
   <title>Главная страница блока администратора</title>
@@ -25,6 +21,8 @@ cellspacing="0" bgcolor="#FFFFFF" class="main_border">
           <!-- Основной блок сайта-->
           <td valign="top">
             <p>Админский блок</p>
+
+
           </td>
         </tr>
       </table>

@@ -61,7 +61,7 @@ if(isset($data['sub_com'])) {
     mail($address, $subject, $message, "Content-type: text/plain;
     Charset=windows-1251\r\n");
 
-    header("Refresh:0; url=view_post.php?id=$id");
+    header("Location: view_post.php?id=$id");
 
     if ($stmt5) {
       echo "<p>Данные занесены в таблицу!</p>";
@@ -72,11 +72,4 @@ if(isset($data['sub_com'])) {
     exit("<p>Вы ввели неверную сумму с картинки!<br><input type='button'
     value='Вернуться' name='back' onclick='javascript:history.back()'></p>");
   }
-
-
-
 }
-
-
-
-?>
